@@ -1,0 +1,272 @@
+
+:root {
+  font-family: "Yu Gothic UI", "Meiryo", sans-serif;
+  color: #25352b;
+  background: #f4f7f3;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 48px 18px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #e2e9e1;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(32, 65, 41, 0.07);
+}
+
+.app-header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #39764b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: #6b786f;
+  font-size: 14px;
+}
+
+.task-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#task-form {
+  display: flex;
+  gap: 10px;
+}
+
+#task-input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #d7e0d6;
+  border-radius: 10px;
+  outline: none;
+}
+
+#task-input:focus {
+  border-color: #39764b;
+  box-shadow: 0 0 0 3px rgba(57, 118, 75, 0.12);
+}
+
+.add-button {
+  flex-shrink: 0;
+  padding: 0 22px;
+  color: #ffffff;
+  background: #2e6f40;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.add-button:hover {
+  background: #245a33;
+}
+
+.form-message {
+  min-height: 18px;
+  margin: 8px 0 0;
+  color: #b33c36;
+  font-size: 12px;
+}
+
+.task-section {
+  margin-top: 28px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.task-count {
+  color: #68776b;
+  font-size: 12px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.filter-button {
+  padding: 8px 13px;
+  color: #647168;
+  background: #f4f6f3;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.filter-button.active {
+  color: #28643a;
+  background: #e7f1e8;
+  border-color: #cfe3d2;
+  font-weight: 700;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e5ebe4;
+  border-radius: 12px;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #2e6f40;
+  cursor: pointer;
+}
+
+.task-title {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.task-title.completed {
+  color: #8b978e;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  padding: 6px 9px;
+  color: #8c4b47;
+  background: #fff5f4;
+  border: 1px solid #f0dfdd;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.delete-button:hover {
+  background: #ffe9e6;
+}
+
+.empty-message {
+  padding: 22px 12px;
+  color: #7b887e;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.app-footer {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #edf0ec;
+  color: #89948b;
+  font-size: 11px;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 18px 10px;
+  }
+
+  .app {
+    padding: 24px 18px;
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  #task-form {
+    gap: 7px;
+  }
+
+  .add-button {
+    padding: 0 16px;
+  }
+
+  .task-item {
+    gap: 9px;
+    padding: 11px;
+  }
+}
+
+/* タスク名と期限を縦に並べる */
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 期限の表示 */
+.task-due-date {
+  font-size: 12px;
+  color: #666666;
+}
+
+/* タスク名が長い場合も折り返す */
+.task-title {
+  overflow-wrap: anywhere;
+}
+
+/* 期限切れの表示 */
+.task-overdue {
+  color: #c62828;
+  font-size: 12px;
+  font-weight: bold;
+}

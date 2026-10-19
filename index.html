@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Tasks | タスク管理</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <p class="eyebrow">MY WORKSPACE</p>
+      <h1>My Tasks</h1>
+      <p class="subtitle">今日やることを、ひとつずつ。</p>
+    </header>
+
+    <section class="task-form" aria-label="タスクの追加">
+      <label for="task-input">新しいタスク</label>
+      <form id="task-form">
+        <input
+          id="task-input"
+          type="text"
+          placeholder="例：企画書の構成を考える"
+          maxlength="120"
+          required
+        >
+         
+      <label for="task-due-date">期限（任意）</label>
+        <input
+         id="task-due-date"
+          type="date"
+  >
+        <button type="submit" class="add-button">追加</button>
+      </form>
+      <p id="form-message" class="form-message" aria-live="polite"></p>
+    </section>
+
+    <section class="task-section">
+      <div class="section-heading">
+        <h2>タスクリスト</h2>
+        <span id="task-count" class="task-count">0件</span>
+      </div>
+
+      <div class="filter-buttons" aria-label="表示するタスク">
+        <button type="button" class="filter-button active" data-filter="all">すべて</button>
+        <button type="button" class="filter-button" data-filter="active">未完了</button>
+        <button type="button" class="filter-button" data-filter="completed">完了</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-message" class="empty-message">
+        タスクはまだありません。最初のタスクを追加しましょう。
+      </p>
+    </section>
+
+    <footer class="app-footer">
+      <p>データはこのブラウザに保存されます。</p>
+    </footer>
+  </main>
+</body>
+</html>
